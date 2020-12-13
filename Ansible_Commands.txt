@@ -17,3 +17,14 @@ ansible dev -i dev  -m win_copy -a "src=/tmp/file1 dest=C:/Users/Administrator/D
 ###How to copy the file from Anisible controller to traget server for Linux
 ansible dev -i dev  -m copy -a "src=/tmp/file1 dest=/tmp/file1"
 
+
+
+###This is ansible vault section
+
+ansible-vault encrypt dev
+ansible-vault edit dev
+ansible-vault decrypt dev
+
+ansible-playbook --ask-vault-pass -i host/dev deployservice.yml
+
+
