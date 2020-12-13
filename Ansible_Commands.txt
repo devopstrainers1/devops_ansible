@@ -28,3 +28,7 @@ ansible-vault decrypt dev
 ansible-playbook --ask-vault-pass -i host/dev deployservice.yml
 
 
+#### How to create role
+ansible-galaxy init tomcat
+
+
