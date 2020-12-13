@@ -1,0 +1,5 @@
+[dev]
+
+#FE ansible_host=35.222.30.205 ansible_ssh_user=demo ansible_ssh_pass='devops@1234' ansible_connection=ssh ansible_port=22 ansible_ssh_common_args='-o StrictHostKeyChecking=no' 
+
+BE ansible_host=18.209.58.90 ansible_user=Administrator ansible_password='Fi%Fhg6shVole9qn6aPl$jtZq-5hZ?-9' ansible_connection=winrm ansible_wirm_server_cert_validation=ignore ansible_port=5985
