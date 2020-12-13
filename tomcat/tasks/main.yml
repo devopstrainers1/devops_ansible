@@ -1,0 +1,19 @@
+---
+# tasks file for tomcat
+- name: Installtion of package
+  package:
+   name: "{{ package_name }}"
+   state: present
+
+
+- name: Update the server config
+  template:
+    src: httpd.j2
+    dest: /etc/httpd/conf/httpd.conf
+  notify:
+  - Restart service
+
+- name: Copy web content
+  copy: 
+    src: index.html
+    dest: /var/www/html/

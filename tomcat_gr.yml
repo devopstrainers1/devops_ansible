@@ -1,0 +1,26 @@
+---
+- name: This to manage apache server
+  hosts: FE
+  become: yes
+  tasks:
+
+  - name: Installtion of tomcat
+    package:
+     name: httpd
+     state: present
+
+
+  - name: Update the server config
+    template:
+      src: httpd.j2
+      dest: /etc/httpd/conf/httpd.conf
+
+  - name: Copy web content
+    copy: 
+      src: index.html
+      dest: /var/www/html/
+
+  - name: start service
+    service:
+      name: httpd
+      state: restarted

@@ -1,0 +1,31 @@
+---
+- name: This to manage apache server
+  hosts: FE
+  vars:
+   http_port: 8086
+  become: yes
+  tasks:
+
+  - name: Installtion of tomcat
+    package:
+     name: httpd
+     state: present
+
+
+  - name: Update the server config
+    template:
+      src: httpd.j2
+      dest: /etc/httpd/conf/httpd.conf
+    notify:
+    - Restart service
+
+  - name: Copy web content
+    copy: 
+      src: index.html
+      dest: /var/www/html/
+  
+  handlers:
+    - name: Restart service
+      service:
+        name: httpd
+        state: restarted

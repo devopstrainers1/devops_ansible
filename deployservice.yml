@@ -1,0 +1,6 @@
+---
+- name: Deploy Service
+  hosts: FE
+  become: yes
+  roles:
+   - tomcat

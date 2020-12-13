@@ -1,0 +1,4 @@
+---
+# vars file for tomcat
+http_port: 8087
+package_name: vsftpd
