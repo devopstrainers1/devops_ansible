@@ -1,0 +1,19 @@
+###Anisible Installtion  on Centos 
+yum install -y ansible
+
+###How to Linux box
+ansible dev -i dev -m ping
+
+###How to setup winrm on ansible contrller
+yum install python-pip
+pip install pywinrm
+
+###How to ping windows box
+ansible dev  -i dev  -m win_ping
+
+###How to copy the file from Anisible controller to traget server for Windows
+ansible dev -i dev  -m win_copy -a "src=/tmp/file1 dest=C:/Users/Administrator/Documents/file1"
+
+###How to copy the file from Anisible controller to traget server for Linux
+ansible dev -i dev  -m copy -a "src=/tmp/file1 dest=/tmp/file1"
+
